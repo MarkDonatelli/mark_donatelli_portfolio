@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .button-primary {
+    @apply inline-block px-6 py-3 text-white bg-[#0b0d17] border-2 border-white font-bold uppercase rounded-lg transition-transform duration-300 relative overflow-hidden;
+  }
+
+  .button-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-white;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease-in-out;
+    z-index: -1;
+  }
+
+  .button-primary:hover::before {
+    transform: scaleY(1);
+  }
+
+  .button-primary:hover {
+    @apply text-[#0b0d17];
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .button-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
