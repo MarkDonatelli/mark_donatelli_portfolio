@@ -4,9 +4,7 @@ interface TailwindSizeDisplayProps {
   positionClasses?: string;
 }
 
-export const TailwindSizeDisplay: React.FC<TailwindSizeDisplayProps> = ({
-  positionClasses = 'bottom-1 left-1'
-}) => {
+export const TailwindSizeDisplay: React.FC<TailwindSizeDisplayProps> = ({}) => {
   const breakpoints: Array<keyof typeof breakpointClasses> = [
     'xs',
     'sm',
@@ -26,11 +24,11 @@ export const TailwindSizeDisplay: React.FC<TailwindSizeDisplayProps> = ({
 
   return (
     <div
-      className={`fixed ${positionClasses} z-50 flex h-10 w-14 items-center justify-center rounded-full bg-gray-800 p-3 font-mono text-sm text-white`}
+      className={`fixed right-3 bottom-3 z-50 flex h-10 items-center justify-center rounded-full bg-gray-800 p-3 font-geo text-sm text-white`}
     >
       {breakpoints.map((bp) => (
         <div key={bp} className={breakpointClasses[bp]}>
-          {bp}
+          breakpoint: {bp}
         </div>
       ))}
     </div>
