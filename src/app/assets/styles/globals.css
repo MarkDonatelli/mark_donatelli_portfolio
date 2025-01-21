@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  .container-content {
+    @apply max-w-[1440px] w-full mx-auto px-4;
+  }
   .button-primary {
-    @apply inline-block px-6 py-3 text-white bg-[#0b0d17] border-2 border-white font-bold uppercase rounded-lg transition-transform duration-300 relative overflow-hidden;
+    @apply inline-block px-6 py-3 dark:text-white text-navy-dark bg-transparent border-2 dark:border-white border-navy-dark font-bold uppercase rounded-lg transition-transform duration-300 relative overflow-hidden;
   }
 
   .button-primary::before {
@@ -30,22 +33,4 @@
     transform: translateY(0);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-}
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geologica } from 'next/font/google';
 import './assets/styles/globals.css';
 import TailwindSizeDisplay from './components/TailwindBreakPoints';
+import Header from './components/Header';
 
 const geo = Geologica({
   variable: '--font-geo',
@@ -29,8 +30,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geo.variable}  antialiased`}>
+    <html lang="en" className="dark">
+      <body
+        className={`${geo.variable} dark:bg-custom-gradient-dark bg-custom-gradient-light bg-no-repeat antialiased`}
+      >
+        <Header />
         {children} <TailwindSizeDisplay />
       </body>
     </html>

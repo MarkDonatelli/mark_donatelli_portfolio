@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 export default {
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -29,7 +30,10 @@ export default {
         }
       },
       backgroundImage: {
-        'custom-gradient': 'linear-gradient(120deg, #0b0d17, #1a2740, #0f1e33)'
+        'custom-gradient-dark':
+          'linear-gradient(120deg, #0b0d17, #1a2740, #0f1e33)', // Default
+        'custom-gradient-light':
+          'linear-gradient(120deg, #f3f4f6, #d1d5db, #e5e7eb)' // For light mode
       }
     }
   },
