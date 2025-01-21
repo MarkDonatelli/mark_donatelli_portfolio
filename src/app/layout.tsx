@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { Geologica } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './assets/styles/globals.css';
 import TailwindSizeDisplay from './components/TailwindBreakPoints';
 import Header from './components/Header';
 
-const geo = Geologica({
-  variable: '--font-geo',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin']
 });
 
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geo.variable} dark:bg-custom-gradient-dark bg-custom-gradient-light bg-no-repeat antialiased`}
+        className={`${inter.variable} dark:bg-custom-gradient-dark bg-custom-gradient-light bg-no-repeat antialiased`}
       >
         <Header />
         {children} <TailwindSizeDisplay />

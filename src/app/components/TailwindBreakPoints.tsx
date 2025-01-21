@@ -24,7 +24,7 @@ export const TailwindSizeDisplay: React.FC<TailwindSizeDisplayProps> = ({}) => {
 
   return (
     <div
-      className={`fixed right-3 bottom-3 z-50 flex h-10 items-center justify-center rounded-full bg-gray-800 p-3 font-geo text-sm text-white`}
+      className={`fixed right-3 bottom-3 z-50 flex h-10 items-center justify-center rounded-full bg-gray-800 p-3 font-inter text-sm text-white`}
     >
       {breakpoints.map((bp) => (
         <div key={bp} className={breakpointClasses[bp]}>

@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        geo: ['Geologica', 'sans-serif']
+        inter: ['Inter', 'sans-serif']
       },
       colors: {
         navy: {

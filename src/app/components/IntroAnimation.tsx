@@ -28,7 +28,7 @@ export default function IntroAnimation({
             delay: 1.5,
             ease: 'easeInOut'
           }}
-          className="leading-[0px] uppercase font-medium font-geo sm:-tracking-[0.5rem] -tracking-[0.3rem]  text-[12.5vw] sm:text-[4.5vw] text-white"
+          className="leading-[clamp(2.5rem,3vw,7rem)] uppercase font-medium font-inter tracking-[clamp(-0.2rem,-0.1vw,-0.3rem)] text-[clamp(2.5rem,4.5vw,7rem)] text-white"
         >
           Mark Donatelli
         </motion.h1>
@@ -40,7 +40,7 @@ export default function IntroAnimation({
             delay: 1.5,
             ease: 'easeInOut'
           }}
-          className=" uppercase font-bold font-geo sm:-tracking-[0.7rem] sm:text-[7vw] text-white"
+          className="leading-[clamp(2rem,7vw,14rem)] uppercase font-bold font-inter tracking-[clamp(-0.3rem,-0.2vw,-0.6rem)] text-[clamp(2.5rem,7vw,14rem)] text-white"
         >
           Front-End Developer
         </motion.p>

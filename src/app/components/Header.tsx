@@ -17,19 +17,27 @@ export default function Header() {
 
   return (
     <div className="container-content py-6 flex w-full dark:text-white text-navy-dark justify-between">
-      <h1>Avatar or logo</h1>
+      <ul className="flex gap-12 text-base uppercase font-medium font-inter">
+        <li>Home</li>
+        <li>About</li>
+      </ul>
 
-      <ul className="flex gap-4">
-        <li>About</li>
-        <li>About</li>
-        <li>About</li>
-        <button onClick={() => setIsDarkMode(!isDarkMode)}>
-          {isDarkMode ? (
-            <SunIcon className="size-6 text-white" />
-          ) : (
-            <MoonIcon className="size-6 text-navy-dark" />
-          )}
-        </button>
+      <div className="font-inter font-medium text-2xl uppercase">
+        <p>Mark Donatelli</p>
+      </div>
+
+      <ul className="flex gap-8 text-base uppercase font-medium font-inter">
+        <li>Work</li>
+        <li>Contact</li>
+        <li>
+          <button onClick={() => setIsDarkMode(!isDarkMode)}>
+            {isDarkMode ? (
+              <SunIcon className="size-6 text-white" />
+            ) : (
+              <MoonIcon className="size-6 text-navy-dark" />
+            )}
+          </button>
+        </li>
       </ul>
     </div>
   );

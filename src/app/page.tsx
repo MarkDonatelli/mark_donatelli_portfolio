@@ -16,14 +16,14 @@ export default function Home() {
       {showIntro && <IntroAnimation onComplete={handleIntroComplete} />}
 
       <div className="container-content">
-        <p className="dark:text-neutral-lightGray text-navy-dark mt-0 text-[3rem]">
-          Hi, I&apos;m Mark! A builder of seamless, stunning web experiences
-          with a dash of creativity and a whole lot of code.
-        </p>
-
-        <div className="flex space-x-4 mt-8">
-          <button className="button-primary">View My Work</button>
-          <button className="button-primary">Get in Touch</button>
+        <div className="flex flex-col justify-between py-32 border-b border-white">
+          <div>
+            <h1 className="leading-[1] text-[86px] 2xl:text-[100px]  font-medium text-white uppercase">
+              Hi, I&apos;m Mark!
+              <br /> Front-End Developer
+              <br /> & Creative Problem-Solver
+            </h1>
+          </div>
         </div>
       </div>
     </>

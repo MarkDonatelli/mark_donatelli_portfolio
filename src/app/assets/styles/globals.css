@@ -4,10 +4,10 @@
 
 @layer base {
   .container-content {
-    @apply max-w-[1440px] w-full mx-auto px-4;
+    @apply max-w-[1600px] w-full mx-auto px-8;
   }
   .button-primary {
-    @apply inline-block px-6 py-3 dark:text-white text-navy-dark bg-transparent border-2 dark:border-white border-navy-dark font-bold uppercase rounded-lg transition-transform duration-300 relative overflow-hidden;
+    @apply inline-block font-inter px-6 py-3 dark:text-white text-navy-dark bg-transparent border-2 dark:border-white border-navy-dark font-bold uppercase rounded-lg transition-transform duration-300 relative overflow-hidden;
   }
 
   .button-primary::before {
