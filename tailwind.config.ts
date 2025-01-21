@@ -10,7 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        inter: ['Inter', 'sans-serif']
+        inter: ['Inter', 'sans-serif'],
+        aze: ['var(--font-aze)', 'monospace']
       },
       colors: {
         navy: {

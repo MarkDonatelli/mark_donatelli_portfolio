@@ -16,28 +16,19 @@ export default function Header() {
   }, [isDarkMode]);
 
   return (
-    <div className="container-content py-6 flex w-full dark:text-white text-navy-dark justify-between">
-      <ul className="flex gap-12 text-base uppercase font-medium font-inter">
-        <li>Home</li>
-        <li>About</li>
-      </ul>
-
-      <div className="font-inter font-medium text-2xl uppercase">
-        <p>Mark Donatelli</p>
-      </div>
-
-      <ul className="flex gap-8 text-base uppercase font-medium font-inter">
-        <li>Work</li>
+    <div className="container-content py-3 flex w-full dark:text-white text-navy-dark">
+      <ul className="flex gap-12 w-full justify-between text-sm uppercase font-light font-aze">
+        <li>Mark Donatelli</li>
+        <li>Front-end Developer</li>
+        <li>Boston, MA</li>
         <li>Contact</li>
-        <li>
-          <button onClick={() => setIsDarkMode(!isDarkMode)}>
-            {isDarkMode ? (
-              <SunIcon className="size-6 text-white" />
-            ) : (
-              <MoonIcon className="size-6 text-navy-dark" />
-            )}
-          </button>
-        </li>
+        <button onClick={() => setIsDarkMode(!isDarkMode)}>
+          {isDarkMode ? (
+            <SunIcon className="size-5 text-white" />
+          ) : (
+            <MoonIcon className="size-5 text-navy-dark" />
+          )}
+        </button>
       </ul>
     </div>
   );
