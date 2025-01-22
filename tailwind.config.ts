@@ -27,14 +27,15 @@ export default {
         neutral: {
           lightGray: '#d1d5db',
           warmWhite: '#f3f4f6',
-          mutedGray: '#6b7280'
+          mutedGray: '#6b7280',
+          lightBeige: '#f6f3ec'
         }
       },
       backgroundImage: {
-        'custom-gradient-dark':
-          'linear-gradient(120deg, #0b0d17, #1a2740, #0f1e33)', // Default
         'custom-gradient-light':
-          'linear-gradient(120deg, #f3f4f6, #d1d5db, #e5e7eb)' // For light mode
+          'linear-gradient(120deg, #f6f3ec, #fbf9f4, #f9f7f0)',
+        'custom-gradient-dark':
+          'linear-gradient(120deg, #0b0d17, #1a2740, #162030)'
       }
     }
   },

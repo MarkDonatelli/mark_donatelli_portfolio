@@ -3,6 +3,7 @@ import { Inter, Azeret_Mono } from 'next/font/google';
 import './assets/styles/globals.css';
 import TailwindSizeDisplay from './components/TailwindBreakPoints';
 import Header from './components/Header';
+import ClientWrapper from './components/ClientWrapper';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -36,11 +37,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body
-        className={`${inter.variable} ${aze.variable} dark:bg-custom-gradient-dark bg-custom-gradient-light bg-no-repeat antialiased`}
-      >
+      <body className={`${inter.variable} ${aze.variable}   antialiased`}>
         <Header />
-        {children} <TailwindSizeDisplay />
+        <ClientWrapper>{children}</ClientWrapper>
+        {process.env.NODE_ENV === 'development' && <TailwindSizeDisplay />}
       </body>
     </html>
   );

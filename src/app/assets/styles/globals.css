@@ -6,6 +6,15 @@
   .container-content {
     @apply max-w-[1600px] w-full mx-auto px-8;
   }
+
+  .bg-primary {
+    @apply dark:bg-navy-dark bg-neutral-lightBeige;
+  }
+
+  .text-primary {
+    @apply text-navy-dark dark:text-white;
+  }
+
   .button-primary {
     @apply inline-block font-inter px-6 py-3 dark:text-white text-navy-dark bg-transparent border-2 dark:border-white border-navy-dark font-bold uppercase rounded-lg transition-transform duration-300 relative overflow-hidden;
   }
@@ -33,4 +42,9 @@
     transform: translateY(0);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+}
+
+body,
+html {
+  overflow-x: hidden;
 }
