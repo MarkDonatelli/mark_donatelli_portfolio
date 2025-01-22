@@ -17,7 +17,7 @@ export default function IntroAnimation({
         ease: 'easeInOut'
       }}
       onAnimationComplete={onComplete}
-      className="fixed inset-0 w-full h-full  bg-custom-gradient-dark z-20"
+      className="fixed inset-0 w-full h-full bg-primary z-20"
     >
       <div className="grid place-content-center h-full">
         <motion.h1
