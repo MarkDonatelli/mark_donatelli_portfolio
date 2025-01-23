@@ -3,8 +3,9 @@
 import { useState, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import IntroAnimation from './components/IntroAnimation';
-import Skills from './components/sections/Skills';
+import Technologies from './components/sections/Technologies';
 import AboutMe from './components/sections/AboutMe';
+import Projects from './components/sections/Projects';
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -30,12 +31,12 @@ export default function Home() {
           <motion.div
             style={{ y: heroY }}
             initial={{ willChange: 'transform' }}
-            className="bg-primary relative z-0"
+            className="bg-primary relative z-0 h-screen"
           >
             <div className="container-content">
               <motion.div
                 style={{ y: textY }}
-                className="flex flex-col justify-between py-40 md:py-60 heading-1 font-medium text-navy-dark dark:text-white uppercase"
+                className="flex flex-col justify-between py-40 md:py-60 heading-1 font-medium text-navy-dark dark:text-neutral-lightBeige uppercase"
               >
                 <div>
                   <h1>Hi, I&apos;m Mark</h1>
@@ -52,7 +53,8 @@ export default function Home() {
         </section>
 
         <AboutMe />
-        <Skills />
+        <Technologies />
+        <Projects />
       </main>
     </>
   );

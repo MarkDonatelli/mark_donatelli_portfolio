@@ -16,7 +16,7 @@ export default function BorderReveal() {
         duration: 1.5,
         ease: 'easeInOut'
       }}
-      className="relative origin-left w-full h-[1px] bg-white"
+      className="relative origin-left w-full h-[1px] dark:bg-neutral-lightBeige bg-navy-dark"
     ></motion.div>
   );
 }

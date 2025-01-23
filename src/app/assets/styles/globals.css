@@ -12,7 +12,7 @@
   }
 
   .text-primary {
-    @apply text-navy-dark dark:text-white;
+    @apply text-navy-dark dark:text-neutral-lightBeige;
   }
 
   .heading-1 {
@@ -20,7 +20,7 @@
   }
 
   .heading-2 {
-    @apply leading-[1.2] text-[clamp(2rem,5vw,5rem)];
+    @apply leading-[1.2] text-[clamp(2rem,5vw,5rem)] font-normal text-primary uppercase;
   }
 
   .heading-3 {
@@ -28,12 +28,12 @@
   }
 
   .button-primary {
-    @apply inline-block font-inter px-6 py-3 dark:text-white text-navy-dark bg-transparent border-2 dark:border-white border-navy-dark font-bold uppercase rounded-lg transition-transform duration-300 relative overflow-hidden;
+    @apply inline-block font-inter px-6 py-3 dark:text- text-navy-dark bg-transparent border-2 dark:border-neutral-lightBeige border-navy-dark font-bold uppercase rounded-lg transition-transform duration-300 relative overflow-hidden;
   }
 
   .button-primary::before {
     content: '';
-    @apply absolute inset-0 bg-white;
+    @apply absolute inset-0 bg-neutral-lightBeige;
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform 0.3s ease-in-out;
