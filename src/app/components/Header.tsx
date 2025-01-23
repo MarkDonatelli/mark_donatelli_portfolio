@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 
@@ -14,6 +15,7 @@ export default function Header() {
     },
     {
       text: 'Contact',
+      isClickable: true,
       onClick: () => console.log('Contact clicked')
     }
   ];
@@ -27,17 +29,48 @@ export default function Header() {
     }
   }, [isDarkMode]);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.8, 0.5, 1]
+      }
+    }
+  };
+
   return (
-    <header className="bg-primary">
-      {' '}
+    <header id="header" className="bg-primary">
       <div className="container-content py-3 flex w-full text-primary">
-        <ul className="flex gap-12 w-full justify-between text-sm uppercase font-light tracking-tight font-aze">
+        <motion.ul
+          className="flex gap-12 w-full justify-between text-sm uppercase font-light tracking-tight font-aze"
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+        >
           {navItems.map((item, index) => (
-            <li key={index} onClick={item.onClick}>
+            <motion.li
+              key={index}
+              variants={itemVariants}
+              onClick={item.onClick}
+              className={item.isClickable ? 'cursor-pointer' : ''}
+            >
               {item.text}
-            </li>
+            </motion.li>
           ))}
-          <li>
+          <motion.li variants={itemVariants}>
             <button onClick={() => setIsDarkMode(!isDarkMode)}>
               {isDarkMode ? (
                 <SunIcon className="size-5 text-white" />
@@ -45,8 +78,8 @@ export default function Header() {
                 <MoonIcon className="size-5 text-navy-dark" />
               )}
             </button>
-          </li>
-        </ul>
+          </motion.li>
+        </motion.ul>
       </div>
     </header>
   );
