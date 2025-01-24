@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import BorderReveal from '../BorderReveal';
 
 export default function Hero() {
   const ref = useRef(null);
@@ -45,26 +46,41 @@ export default function Hero() {
         <div className="container-content h-full">
           <motion.div
             style={{ y: textY }}
-            className="flex flex-col justify-center h-full"
+            className="flex flex-col justify-center items-center h-full"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
             <div className="-mt-[49px]">
               <motion.h1
-                className="leading-[clamp(1.6rem,3vw,3rem)] uppercase font-medium font-inter tracking-[clamp(-0.2rem,-0.1vw,-0.3rem)] text-[clamp(1.8rem,4.5vw,7rem)] text-primary"
+                className="text-center uppercase font-bold font-inter tracking-tighter leading-[clamp(1.5rem,6vw,6.5rem)] text-[clamp(3rem,13vw,13rem)] text-primary mb-[clamp(1rem,2vw,4rem)]"
                 variants={itemVariants}
               >
-                Mark Donatelli
+                Mark
               </motion.h1>
-            </div>
-            <div>
-              <motion.p
-                className="leading-[clamp(2rem,7vw,10rem)] uppercase font-bold font-inter tracking-[clamp(-0.1rem,-0.2vw,-0.6rem)] text-[clamp(1.7rem,7vw,8rem)] text-primary"
+
+              <motion.h1
+                className="text-center uppercase font-bold font-inter tracking-tighter leading-none text-[clamp(3rem,13vw,13rem)] text-primary mb-[clamp(1rem,1vw,1rem)]"
                 variants={itemVariants}
               >
-                Front-End Developer
-              </motion.p>
+                Donatelli
+              </motion.h1>
+
+              <motion.ul
+                className="flex justify-between text-center uppercase font-normal font-aze tracking-tighter text-[clamp(1rem,2vw,1.75rem)] text-navy-dark dark:text-neutral-lightGray"
+                variants={itemVariants}
+              >
+                <li>
+                  Design
+                  <BorderReveal height="h-[1px] " />
+                </li>
+                <li>
+                  Code <BorderReveal height="h-[1px]" />
+                </li>
+                <li>
+                  Create <BorderReveal height="h-[1px] " />
+                </li>
+              </motion.ul>
             </div>
           </motion.div>
         </div>

@@ -9,7 +9,7 @@ export default function Header() {
 
   const navItems = [
     { text: 'Mark Donatelli' },
-    { text: 'Front-end Developer' },
+    { text: 'Developer' },
     {
       text: 'Boston, MA'
     },

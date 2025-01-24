@@ -3,7 +3,13 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-export default function BorderReveal() {
+interface BorderRevealProps {
+  height?: string;
+}
+
+export default function BorderReveal({
+  height = 'h-[1px]'
+}: BorderRevealProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -16,7 +22,7 @@ export default function BorderReveal() {
         duration: 1.5,
         ease: 'easeInOut'
       }}
-      className="relative origin-left w-full h-[1px] dark:bg-neutral-lightBeige bg-navy-dark"
+      className={`relative origin-left w-full ${height} dark:bg-neutral-lightBeige bg-navy-dark`}
     ></motion.div>
   );
 }
