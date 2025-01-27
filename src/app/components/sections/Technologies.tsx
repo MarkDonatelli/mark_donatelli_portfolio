@@ -43,7 +43,11 @@ export function InfiniteCarousel() {
     isDarkMode ? '/logos/github-light.svg' : '/logos/github.svg',
     '/logos/gtm.svg',
     '/logos/css.svg',
-    '/logos/ga.svg'
+    '/logos/ga.svg',
+    '/logos/xd.svg',
+    '/logos/illustrator.svg',
+    '/logos/figma.svg',
+    '/logos/photoshop.svg'
   ];
 
   const items = [...rowItems, ...rowItems];
