@@ -1,17 +1,49 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import BorderReveal from '../BorderReveal';
 
 export function InfiniteCarousel() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const htmlElement = document.documentElement;
+
+    const checkDarkMode = () => {
+      setIsDarkMode(htmlElement.classList.contains('dark'));
+    };
+
+    checkDarkMode();
+
+    const observer = new MutationObserver(() => {
+      checkDarkMode();
+    });
+
+    observer.observe(htmlElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const rowItems = [
-    '/react.svg',
-    '/react.svg',
-    '/react.svg',
-    '/react.svg',
-    '/react.svg'
+    '/logos/react.svg',
+    '/logos/next.svg',
+    '/logos/vue.svg',
+    '/logos/nuxt.svg',
+    '/logos/tailwind.svg',
+    '/logos/node.svg',
+    '/logos/netlify.svg',
+    '/logos/html.svg',
+    '/logos/javascript.svg',
+    '/logos/aws.svg',
+    isDarkMode ? '/logos/github-light.svg' : '/logos/github.svg',
+    '/logos/gtm.svg',
+    '/logos/css.svg',
+    '/logos/ga.svg'
   ];
 
   const items = [...rowItems, ...rowItems];
@@ -34,7 +66,7 @@ export function InfiniteCarousel() {
         transition={{
           repeat: Infinity,
           ease: 'linear',
-          duration: 20
+          duration: 50
         }}
         style={{
           transform: `translateX(0)`
@@ -43,10 +75,10 @@ export function InfiniteCarousel() {
         {items.map((item, index) => (
           <div
             key={`row1-${index}`}
-            className="flex justify-center mb-5 items-center rounded-2xl dark:border-neutral-lightBeige border-navy-dark border-2 h-[375px] min-w-[375px]"
+            className="flex justify-center mb-5 items-center rounded-2xl dark:border-neutral-lightBeige border-navy-dark border-2 h-[200px] min-w-[200px] md:h-[375px] md:min-w-[375px]"
           >
             <Image
-              className="w-auto"
+              className="w-full max-w-[50px] md:max-w-[100px]"
               src={item}
               alt={`Image ${index + 1}`}
               width="10"
@@ -64,7 +96,7 @@ export function InfiniteCarousel() {
         transition={{
           repeat: Infinity,
           ease: 'linear',
-          duration: 20
+          duration: 50
         }}
         style={{
           transform: `translateX(0)`
@@ -73,10 +105,10 @@ export function InfiniteCarousel() {
         {items.map((item, index) => (
           <div
             key={`row2-${index}`}
-            className="dark:border-neutral-lightBeige border-navy-dark flex justify-center items-center rounded-2xl border-2 h-[375px] min-w-[375px]"
+            className="dark:border-neutral-lightBeige border-navy-dark flex justify-center items-center rounded-2xl border-2 h-[200px] min-w-[200px] md:h-[375px] md:min-w-[375px]"
           >
             <Image
-              className="w-auto"
+              className="w-full max-w-[50px] md:max-w-[100px]"
               src={item}
               alt={`Image ${index + 1}`}
               width="10"
@@ -114,7 +146,7 @@ export default function Skills() {
         </div>
       </div>
 
-      <div className="relative">
+      <div className="relative pb-20">
         <InfiniteCarousel />
       </div>
     </section>
