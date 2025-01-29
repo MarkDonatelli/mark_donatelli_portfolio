@@ -190,7 +190,6 @@ export default function Projects() {
               key={project.id}
               image={project.image}
               title={project.title}
-              subtitle={project.subtitle}
               description={project.description}
               link={project.link}
             />
