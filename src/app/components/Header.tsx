@@ -6,12 +6,27 @@ import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 
 export default function Header() {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 639);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const navItems = [
-    { text: 'Mark Donatelli' },
-    { text: 'Developer' },
+    { text: isMobile ? 'MD' : 'Mark Donatelli' },
+    { text: 'Developer', hideMobile: true },
     {
-      text: 'Boston, MA'
+      text: 'Boston, MA',
+      hideMobile: true
     },
     {
       text: 'Contact',
@@ -65,7 +80,13 @@ export default function Header() {
               key={index}
               variants={itemVariants}
               onClick={item.onClick}
-              className={item.isClickable ? 'cursor-pointer' : ''}
+              className={
+                item.isClickable
+                  ? 'cursor-pointer'
+                  : item.hideMobile
+                  ? 'hidden sm:block'
+                  : ''
+              }
             >
               {item.text}
             </motion.li>

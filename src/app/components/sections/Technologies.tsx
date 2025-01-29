@@ -47,7 +47,8 @@ export function InfiniteCarousel() {
     '/logos/xd.svg',
     '/logos/illustrator.svg',
     '/logos/figma.svg',
-    '/logos/photoshop.svg'
+    '/logos/photoshop.svg',
+    '/logos/contentful.svg'
   ];
 
   const items = [...rowItems, ...rowItems];
@@ -82,7 +83,7 @@ export function InfiniteCarousel() {
             className="flex justify-center mb-5 items-center rounded-2xl dark:border-neutral-lightBeige border-navy-dark border-2 h-[200px] min-w-[200px] md:h-[375px] md:min-w-[375px]"
           >
             <Image
-              className="w-full max-w-[50px] md:max-w-[100px]"
+              className="w-full md:max-h-[100px] max-w-[50px] md:max-w-[100px]"
               src={item}
               alt={`Image ${index + 1}`}
               width="10"
@@ -112,7 +113,7 @@ export function InfiniteCarousel() {
             className="dark:border-neutral-lightBeige border-navy-dark flex justify-center items-center rounded-2xl border-2 h-[200px] min-w-[200px] md:h-[375px] md:min-w-[375px]"
           >
             <Image
-              className="w-full max-w-[50px] md:max-w-[100px]"
+              className="w-full md:max-h-[100px]  max-w-[50px] md:max-w-[100px]"
               src={item}
               alt={`Image ${index + 1}`}
               width="10"
