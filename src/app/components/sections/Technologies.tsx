@@ -31,7 +31,7 @@ export function InfiniteCarousel() {
 
   const rowItems = [
     '/logos/react.svg',
-    '/logos/next.svg',
+    isDarkMode ? '/logos/next-light.svg' : '/logos/next.svg',
     '/logos/vue.svg',
     '/logos/nuxt.svg',
     '/logos/tailwind.svg',

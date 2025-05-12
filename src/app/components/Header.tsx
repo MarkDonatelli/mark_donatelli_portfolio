@@ -23,7 +23,7 @@ export default function Header() {
 
   const navItems = [
     { text: isMobile ? 'MD' : 'Mark Donatelli' },
-    { text: 'Developer', hideMobile: true },
+    { text: 'Front End Developer', hideMobile: true },
     {
       text: 'Boston, MA',
       hideMobile: true
