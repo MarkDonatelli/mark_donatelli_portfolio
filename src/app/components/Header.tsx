@@ -31,9 +31,16 @@ export default function Header() {
     {
       text: 'Contact',
       isClickable: true,
-      onClick: () => console.log('Contact clicked')
+      onClick: () => scrollToSection('contact')
     }
   ];
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const root = document.documentElement;

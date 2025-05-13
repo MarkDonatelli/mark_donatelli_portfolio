@@ -37,9 +37,9 @@ export default function AboutMe() {
               />
             </div>
 
-            <div className="flex flex-col flex-1 gap-8">
+            <div className="flex flex-col flex-1 gap-4 sm:gap-8">
               <div>
-                <p className="text-lg text-primary font-medium font-inter leading-relaxed">
+                <p className="sm:text-lg text-base text-primary font-medium font-inter leading-relaxed">
                   I’m a front-end developer and designer with over six years of
                   experience creating clean, modern, and highly usable websites
                   and web applications. I blend strong visual design instincts
@@ -51,7 +51,7 @@ export default function AboutMe() {
                 </p>
               </div>
               <div>
-                <p className="text-lg text-primary font-inter font-medium leading-relaxed">
+                <p className="sm:text-lg text-base text-primary font-inter font-medium leading-relaxed">
                   I care about the full picture. Beyond just writing HTML, CSS,
                   and JavaScript, I focus on the things that aren&apos;t always
                   visible but make a huge difference: SEO, accessibility,
@@ -63,7 +63,7 @@ export default function AboutMe() {
               </div>
 
               <div>
-                <p className="text-lg text-primary font-inter font-medium leading-relaxed">
+                <p className="sm:text-lg text-base text-primary font-inter font-medium leading-relaxed">
                   Over the years, I’ve worked with a wide range of modern tools,
                   frameworks, and libraries including React, Vue, Next.js, Nuxt,
                   Tailwind CSS, Framer Motion, GSAP, and Figma. I’m comfortable
@@ -74,7 +74,7 @@ export default function AboutMe() {
               </div>
 
               <div>
-                <p className="text-lg text-primary font-inter font-medium leading-relaxed">
+                <p className="sm:text-lg text-base text-primary font-inter font-medium leading-relaxed">
                   Collaboration is a big part of how I work. I thrive when
                   developers, designers, and stakeholders are all working
                   together to bring ideas to life. Whether I’m starting a
@@ -85,7 +85,7 @@ export default function AboutMe() {
               </div>
 
               <div>
-                <p className="text-lg text-primary font-inter font-medium leading-relaxed">
+                <p className="sm:text-lg text-base text-primary font-inter font-medium leading-relaxed">
                   When I’m not coding, you’ll usually find me playing guitar,
                   jamming with my band, or diving into creative side projects. I
                   bring the same energy and attention to detail to my work that
