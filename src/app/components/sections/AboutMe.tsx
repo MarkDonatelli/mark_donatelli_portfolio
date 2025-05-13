@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import BorderReveal from '../BorderReveal';
 import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
 
 export default function AboutMe() {
   const ref = useRef(null);
@@ -25,33 +26,71 @@ export default function AboutMe() {
             About Mark
           </motion.h2>
 
-          <div className="flex justify-between items-start gap-8">
-            <div className="max-w-[150px] w-full">
-              <div className="bg-gray-300 w-full p-5 flex items-center justify-center rounded-lg">
-                IMAGE
-              </div>
+          <div className="flex flex-col xl:flex-row justify-between items-start gap-8">
+            <div className="w-full flex justify-center lg:justify-start flex-1">
+              <Image
+                className="max-w-[752px] w-full mx-auto"
+                src="/images/mark-hendrix.png"
+                width={752}
+                height={691}
+                alt="Picture of the author"
+              />
             </div>
 
-            <div className="flex max-w-[1000px] gap-8">
+            <div className="flex flex-col flex-1 gap-8">
               <div>
                 <p className="text-lg text-primary font-medium font-inter leading-relaxed">
-                  As a skilled front-end developer and designer with over six
-                  years of experience, I specialize in crafting intuitive web
-                  applications and impactful designs. I seamlessly blend
-                  technical expertise with creative design to deliver
-                  user-friendly and visually engaging solutions that leave a
-                  lasting impression.
+                  I’m a front-end developer and designer with over six years of
+                  experience creating clean, modern, and highly usable websites
+                  and web applications. I blend strong visual design instincts
+                  with solid development skills to build experiences that not
+                  only look great but feel great to use. My work is guided by a
+                  deep understanding of user needs and business goals, always
+                  aiming to strike the right balance between aesthetics,
+                  functionality, and performance.
                 </p>
               </div>
               <div>
                 <p className="text-lg text-primary font-inter font-medium leading-relaxed">
-                  With a focus on client collaboration, I balance development
-                  and design to create tailored digital experiences that align
-                  with unique goals. I adapt quickly to emerging technologies
-                  and am passionate about the future of development, including
-                  leveraging AI to enhance workflows and drive innovation. My
-                  work ensures cohesive and impactful results through meticulous
-                  attention to detail and creativity.
+                  I care about the full picture. Beyond just writing HTML, CSS,
+                  and JavaScript, I focus on the things that aren&apos;t always
+                  visible but make a huge difference: SEO, accessibility,
+                  performance, responsiveness, and all the little UX details
+                  that make a site feel polished. These are often overlooked,
+                  but they&apos;re what separate a decent website from a truly
+                  great one.
+                </p>
+              </div>
+
+              <div>
+                <p className="text-lg text-primary font-inter font-medium leading-relaxed">
+                  Over the years, I’ve worked with a wide range of modern tools,
+                  frameworks, and libraries including React, Vue, Next.js, Nuxt,
+                  Tailwind CSS, Framer Motion, GSAP, and Figma. I’m comfortable
+                  across the modern front-end stack and confident jumping into
+                  any tech a project requires. I&apos;m a quick learner who
+                  enjoys figuring things out and finding better ways to build.
+                </p>
+              </div>
+
+              <div>
+                <p className="text-lg text-primary font-inter font-medium leading-relaxed">
+                  Collaboration is a big part of how I work. I thrive when
+                  developers, designers, and stakeholders are all working
+                  together to bring ideas to life. Whether I’m starting a
+                  project from scratch or joining midstream to help get things
+                  across the finish line, I take pride in being hands-on,
+                  adaptable, and focused on delivering real results.
+                </p>
+              </div>
+
+              <div>
+                <p className="text-lg text-primary font-inter font-medium leading-relaxed">
+                  When I’m not coding, you’ll usually find me playing guitar,
+                  jamming with my band, or diving into creative side projects. I
+                  bring the same energy and attention to detail to my work that
+                  I bring to my music: a love of the craft, a drive to improve,
+                  and a focus on creating something that resonates.
                 </p>
               </div>
             </div>

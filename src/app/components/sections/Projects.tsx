@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import Image from 'next/image';
 import { ArrowRightCircleIcon } from '@heroicons/react/24/solid';
 import BorderReveal from '../BorderReveal';
 import { motion, useInView } from 'framer-motion';
@@ -9,72 +10,66 @@ projects data
 const projectsData = [
   {
     id: 1,
-    title: 'Aptiom',
-    description: 'This is the first project.',
-    image: 'IMAGE1',
-    link: 'https://Aptiom.com'
+    title: 'Sumitomo Pharma',
+    description: 'jQuery | Grunt | Bootstrap ',
+    image: '/images/sumi.png',
+    link: 'https://www.us.sumitomo-pharma.com/'
   },
+
   {
     id: 2,
-    title: 'Aptiom HCP',
-    description: 'This is the second project.',
-    image: 'IMAGE2',
-    link: 'https://Aptiomhcp.com'
-  },
-  {
-    id: 3,
     title: 'Gemtesa',
-    description: 'This is the second project.',
-    image: 'IMAGE2',
+    description: 'Vue | Nuxt | Tawilwind',
+    image: '/images/gemtesa.png',
     link: 'https://www.gemtesa.com/'
   },
   {
-    id: 4,
+    id: 3,
     title: 'SMPA Med Affairs',
-    description: 'This is the second project.',
-    image: 'IMAGE2',
+    description: 'Vue | Nuxt | Tawilwind',
+    image: '/images/medaffairs.png',
     link: 'https://www.smpamedicalaffairs.com/'
   },
   {
-    id: 5,
+    id: 4,
     title: 'Rethymic',
-    description: 'This is the second project.',
-    image: 'IMAGE2',
+    description: 'Vue | Nuxt | Tawilwind',
+    image: '/images/rethymic.png',
     link: 'https://www.rethymic.com/'
   },
   {
-    id: 6,
+    id: 5,
     title: 'Orgovyx Canada',
-    description: 'This is the second project.',
-    image: 'IMAGE2',
+    description: 'Vue | Nuxt | Tawilwind',
+    image: '/images/org.png',
     link: 'https://www.orgovyx.ca/'
   },
   {
-    id: 7,
+    id: 6,
     title: 'Turn It Up!',
-    description: 'This is the third project.',
-    image: 'IMAGE3',
+    description: 'Vue | Nuxt | Tawilwind',
+    image: '/images/tiu.png',
     link: 'https://turnitupcoverband.com'
   },
   {
-    id: 8,
+    id: 7,
     title: 'IP Address Tracker',
-    description: 'This is the third project.',
-    image: 'IMAGE3',
+    description: 'Vue | Tawilwind',
+    image: '/images/iptracker.png',
     link: 'https://markdonatelli-ip-checker.netlify.app/'
   },
   {
-    id: 9,
+    id: 8,
     title: 'Posts App',
-    description: 'This is the third project.',
-    image: 'IMAGE3',
+    description: 'Vue | Tawilwind',
+    image: '/images/posts.png',
     link: 'https://markdonatelli-posts.netlify.app/'
   },
   {
-    id: 10,
+    id: 9,
     title: 'Notes App',
-    description: 'This is the third project.',
-    image: 'IMAGE3',
+    description: 'Vue | Tawilwind',
+    image: '/images/noteballs.png',
     link: 'https://noteballs-app.netlify.app/#/auth'
   }
 ];
@@ -115,34 +110,38 @@ const Project = ({ title, description, image, link }: ProjectProps) => {
       className="block"
     >
       <div className="flex flex-col group">
-        <div className="bg-red-400 rounded-lg flex items-center justify-center">
-          {image}
-        </div>
+        <Image
+          className="w-full"
+          src={image || ''}
+          width={504}
+          height={379}
+          alt="project"
+        />
 
         <div className="">
-          <div className="relative h-10 overflow-hidden text-white ">
+          <div className="relative h-10 overflow-hidden dark:text-neutral-lightBeige text-navy-dark">
             <div className="absolute cursor-pointer items-center w-full flex justify-between transition-transform duration-300 group-hover:-translate-y-full">
               <p className="font-medium font-inter text-3xl">{title}</p>
               <p className="font-medium font-inter text-lg flex items-center gap-2">
                 View Project
-                <ArrowRightCircleIcon className="size-6 text-white" />
+                <ArrowRightCircleIcon className="size-6 dark:text-neutral-lightBeige text-navy-dark" />
               </p>
             </div>
 
             <div className="absolute cursor-pointer w-full items-center flex justify-between transition-transform duration-300 translate-y-full group-hover:translate-y-0">
               <div className="relative">
                 <p className="font-medium font-inter text-3xl">{title}</p>
-                <div className="absolute left-0 bottom-0 bg-neutral-lightBeige h-[2px] w-full scale-x-0 origin-left transition-transform duration-500 ease-in-out delay-100 group-hover:scale-x-100"></div>
+                <div className="absolute left-0 bottom-0 dark:bg-neutral-lightBeige bg-navy-dark h-[2px] w-full scale-x-0 origin-left transition-transform duration-500 ease-in-out delay-100 group-hover:scale-x-100"></div>
               </div>
 
               <p className="font-medium font-inter text-lg flex items-center gap-2">
                 View Project
-                <ArrowRightCircleIcon className="size-6  text-white -rotate-[35deg]" />
+                <ArrowRightCircleIcon className="size-6  dark:text-neutral-lightBeige text-navy-dark -rotate-[35deg]" />
               </p>
             </div>
           </div>
 
-          <div className="text-white mt-2">
+          <div className="dark:text-neutral-lightBeige text-navy-dark mt-2">
             <p>{description}</p>
           </div>
         </div>
@@ -159,7 +158,7 @@ export default function Projects() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section className="bg-primary relative z-10 h-screen" id="aboutme">
+    <section className="bg-primary relative z-10 " id="projects">
       <div className="container-content">
         <BorderReveal />
         <div className="flex flex-col pt-3">
@@ -183,7 +182,7 @@ export default function Projects() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'show' : 'hidden'}
-          className="grid grid-cols-3 gap-5"
+          className="grid lg:grid-cols-2 2xl:grid-cols-3 gap-5"
         >
           {projectsData.map((project) => (
             <Project
