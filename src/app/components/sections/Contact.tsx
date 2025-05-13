@@ -18,9 +18,26 @@ const Form = ({ onSubmitSuccess }: { onSubmitSuccess: () => void }) => {
     formState: { errors }
   } = useForm<FormData>();
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-    onSubmitSuccess();
+  const onSubmit = async (data: FormData) => {
+    const formData = new FormData();
+    formData.append('form-name', 'contact');
+    formData.append('yourname', data.yourname);
+    formData.append('youremail', data.youremail);
+    formData.append('yourmessage', data.yourmessage);
+
+    try {
+      await fetch('/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(
+          Object.fromEntries(formData.entries()) as Record<string, string>
+        ).toString()
+      });
+
+      onSubmitSuccess();
+    } catch (err) {
+      console.error('Form submission error:', err);
+    }
   };
 
   return (
