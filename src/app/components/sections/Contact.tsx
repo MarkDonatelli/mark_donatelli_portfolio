@@ -26,7 +26,7 @@ const Form = ({ onSubmitSuccess }: { onSubmitSuccess: () => void }) => {
     formData.append('yourmessage', data.yourmessage);
 
     try {
-      await fetch('/contact', {
+      await fetch('/forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(
