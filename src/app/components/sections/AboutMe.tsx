@@ -13,7 +13,10 @@ export default function AboutMe() {
     <section className="bg-primary relative z-10" id="aboutme">
       <div className="container-content">
         <BorderReveal />
-        <div ref={ref} className="flex flex-col pt-3 pb-40 justify-between">
+        <div
+          ref={ref}
+          className="flex flex-col pt-3 pb-20 lg:pb-40 justify-between"
+        >
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
