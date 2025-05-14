@@ -120,7 +120,7 @@ const Project = ({ title, description, image, link }: ProjectProps) => {
 
         <div className="pt-2 pb-4 sm:pb-2 font-aze">
           <div className="relative h-10 overflow-hidden dark:text-neutral-lightBeige text-navy-dark">
-            <div className="absolute cursor-pointer items-center w-full flex justify-between transition-transform duration-300 group-hover:-translate-y-full">
+            <div className="absolute cursor-pointer items-center w-full flex justify-between transition-transform duration-300 sm:group-hover:-translate-y-full">
               <p className="font-medium font-inter text-2xl sm:text-3xl">
                 {title}
               </p>
